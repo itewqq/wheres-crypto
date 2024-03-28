@@ -70,7 +70,11 @@ int idaapi init(void) {
 
 void idaapi term(void) { }
 
-bool idaapi run(size_t /*arg*/) { return true; }
+// Plugin.cpp
+bool idaapi run(size_t /*arg*/) { 
+	g_oDFGPlugin.DfgMenuCallback();
+	return true; 
+}
 
 //--------------------------------------------------------------------------
 char comment[] = "where's crypto";
